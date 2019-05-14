@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class CreateDatabase extends SQLiteOpenHelper {
+public class CreateDatabase extends SQLiteOpenHelper {  //Criar a base é padrão, com essa estrutura
 
     public static final String DB_NAME = "library.db";
     public static final String ID = "_id";
