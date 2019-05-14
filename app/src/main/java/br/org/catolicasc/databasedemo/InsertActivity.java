@@ -1,5 +1,6 @@
 package br.org.catolicasc.databasedemo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class InsertActivity extends AppCompatActivity {
+
+
+    //Tela de cadastro de livros
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,8 @@ public class InsertActivity extends AppCompatActivity {
                 String publisher = etPublisher.getText().toString();
 
                 if (dal.insert(title, author, publisher)) {
+                    Intent intent = new Intent(InsertActivity.this, MainActivity.class);
+                    startActivity(intent);
                     Toast.makeText(InsertActivity.this,
                             "Registro Inserido com sucesso!", Toast.LENGTH_LONG).show();
                 } else {

@@ -54,6 +54,8 @@ public class ViewUpdateActivity extends AppCompatActivity {
                 String publisher = etPublisher.getText().toString();
 
                 if (dal.update(id, title, author, publisher)) {
+                    Intent intent = new Intent(ViewUpdateActivity.this, MainActivity.class);
+                    startActivity(intent);
                     Toast.makeText(ViewUpdateActivity.this,
                             "Registro Inserido com sucesso!", Toast.LENGTH_LONG).show();
                 } else {
@@ -74,6 +76,8 @@ public class ViewUpdateActivity extends AppCompatActivity {
                 int id = Integer.valueOf(tvId.getText().toString());
 
                 if (dal.delete(id)){
+                    Intent intent = new Intent(ViewUpdateActivity.this, MainActivity.class);
+                    startActivity(intent);
                     Toast.makeText(ViewUpdateActivity.this, "Deletado com sucesso", Toast.LENGTH_SHORT).show();
                 }
             }
